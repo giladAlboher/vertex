@@ -94,5 +94,5 @@ def run_server():
     httpd.serve_forever()
 
 
-if _name_ == '_main_':
+if __name__ == '_main_':
     run_server()
