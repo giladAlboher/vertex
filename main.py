@@ -10,7 +10,7 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 #                     datefmt='%Y-%m-%d %H:%M:%S')
 
 
-logger = logging.getLogger(_name_)
+logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 formater = logging.Formatter('%(asctime)s - %(levelname)s - %(name)s - %(message)s',
                              datefmt='%Y-%m-%d %H:%M:%S')
@@ -87,12 +87,12 @@ def send_startup_email():
 
 
 def run_server():
-    server_address = ('', 3000)
+    server_address = ('',3000)
     httpd = HTTPServer(server_address, RequestHandler)
     logger.info('Starting server...')
     send_startup_email()
     httpd.serve_forever()
 
 
-if __name__ == '_main_':
+if __name__ == '__main__':
     run_server()
